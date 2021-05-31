@@ -22,7 +22,7 @@ $(document).ready(function() {
         "font-size":"25px",
         "border":"5px solid red"
     };
-    var gpc_id = window.location.search.split('_').pop(-1);
+    var gpc_id = window.location.search.split("=").pop(-1).split("_").pop(-1);
     $('body').append(`<button id=gpc_id>${gpc_id}</button>`);
     $('body').append('<div class="copied"></div>');
     $('body').append('<input id=dummy>');
@@ -46,9 +46,8 @@ $(document).ready(function() {
         $(this).css({"background":"#0000FF","color":"white"});
     });
     var intervalId = window.setInterval(function(){
-        var gpc_id = window.location.search.split('_').pop(-1);
+        var gpc_id = window.location.search.split("=").pop(-1).split("_").pop(-1);
         $("#gpc_id").text(gpc_id);
         $(".copied").hide();
     }, 500);
 });
-
